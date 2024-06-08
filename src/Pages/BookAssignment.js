@@ -19,7 +19,7 @@ const BookAssignment = () => {
         book.title.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
-    return showAllBooks ? books : books.slice(0, 5);
+    return showAllBooks ? books : books.slice(0, 3);
   }, [books, searchTerm, showAllBooks]);
 
   const addBookToReadingList = (book) => {
@@ -58,7 +58,7 @@ const BookAssignment = () => {
                 <Grid item xs={12} md={6}>
                   <Typography variant="h6" className={classes.title}>Book Collections</Typography>
                   <BookList books={filteredBooks} addBookToReadingList={addBookToReadingList} />
-                  {!showAllBooks && books.length > 5 && (
+                  {!showAllBooks && books.length > 3 && (
                     <Button
                       variant="contained"
                       color="inherit"
